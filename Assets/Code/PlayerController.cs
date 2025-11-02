@@ -12,9 +12,13 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
+    // Public read-only property used by other classes to query which side the player is facing
+    public bool FacingLeft => spriteRenderer != null && spriteRenderer.flipX;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.freezeRotation = true;
         inputActions = new InputSystem_Actions();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -51,7 +55,14 @@ public class PlayerController : MonoBehaviour
         Vector2 mousePos = Mouse.current.position.ReadValue();
         Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
 
-        spriteRenderer.flipX = mousePos.x < playerScreenPoint.x;
+        if (mousePos.x < playerScreenPoint.x)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else
+        {
+            spriteRenderer.flipX = false;
+        }
     }
 
     private void Move()
