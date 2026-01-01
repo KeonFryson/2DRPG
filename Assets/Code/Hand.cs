@@ -58,8 +58,8 @@ public class Hand : MonoBehaviour
     private void Attack()
     {
         animator.SetTrigger("Attack");
+        animator.SetBool("isHoldingSword", playerController.isHoldingItem);
 
-   
     }
 
  
