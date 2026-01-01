@@ -8,10 +8,11 @@ public class Sword : MonoBehaviour
 
     public void OnHit(Collider2D collision)
     {
-        Debug.Log("Sword hit: " + collision.name);
+ 
 
         if (collision.CompareTag("Enemy"))
         {
+            Debug.Log("Sword hit: " + collision.name);
             Enemy enemy = collision.GetComponent<Enemy>();
             if (enemy != null)
             {
