@@ -3,8 +3,10 @@ using UnityEngine.UIElements;
 
 public class Weapon : MonoBehaviour
 {
-   private TrailRenderer trailRenderer;
+    private TrailRenderer trailRenderer;
 
+    private Collider2D weaponCollider;
+     
     void Start()
     {
         // Don't look for trail renderer yet since the child might not be added
@@ -15,8 +17,28 @@ public class Weapon : MonoBehaviour
 
     }
 
-    // Call this method after a child weapon is added to activate its trail
-    public void ActivateTrail()
+    public void ActiveCollider()
+    {
+        if(weaponCollider == null)
+        {
+            weaponCollider = GetComponentInChildren<Collider2D>();
+        }
+
+        weaponCollider.enabled = true;
+    }
+
+
+    public void DeactiveCollider()
+    {
+        if (weaponCollider == null)
+        {
+            weaponCollider = GetComponentInChildren<Collider2D>();
+        }
+        weaponCollider.enabled = false;
+    }
+
+// Call this method after a child weapon is added to activate its trail
+public void ActivateTrail()
     {
         // Find the trail renderer on the child when activating
         if (trailRenderer == null)
@@ -51,4 +73,10 @@ public class Weapon : MonoBehaviour
             trailRenderer.enabled = false; // Start disabled
         }
     }
+
+
+   
+
+
+  
 }
