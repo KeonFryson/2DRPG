@@ -4,13 +4,17 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
 
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float defaultMoveSpeed = 5f;
+    [SerializeField] private float sprintSpeedBoost = 2.5f;
 
     private Rigidbody2D rb;
     private Vector2 movement;
     private InputSystem_Actions inputActions;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+
+    bool isSprinting = false;
+    public bool isHoldingItem = false;
 
     // Public read-only property used by other classes to query which side the player is facing
     public bool FacingLeft => spriteRenderer != null && spriteRenderer.flipX;
@@ -42,6 +46,9 @@ public class PlayerController : MonoBehaviour
     private void PlayerInput()
     {
         movement = inputActions.Player.Move.ReadValue<Vector2>();
+        inputActions.Player.Sprint.performed += ctx => isSprinting = true;
+        inputActions.Player.Sprint.canceled += ctx => isSprinting = false;
+
         animator.SetFloat("moveX", movement.x);
         animator.SetFloat("moveY", movement.y);
     }
@@ -67,7 +74,13 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        Vector2 newPosition = rb.position + movement * (moveSpeed * Time.fixedDeltaTime);
+        Vector2 newPosition = rb.position + movement * (defaultMoveSpeed * Time.fixedDeltaTime);
+
+        if (isSprinting)
+        {
+            newPosition = rb.position + movement * ((defaultMoveSpeed * sprintSpeedBoost) * Time.fixedDeltaTime);
+        }
+
         rb.MovePosition(newPosition);
     }
     private void FixedUpdate()

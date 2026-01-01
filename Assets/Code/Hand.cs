@@ -10,23 +10,28 @@ public class Hand : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private PlayerController playerController;
     private ActiveWeapon activeWeapon;
+    private PlayerController player;
+    private Transform target;
+
 
 
     private void Awake()
     {
         playerController = GetComponentInParent<PlayerController>();
+         
         inputActions = new InputSystem_Actions();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         activeWeapon = GetComponent<ActiveWeapon>()
                       ?? GetComponentInChildren<ActiveWeapon>()
                       ?? GetComponentInParent<ActiveWeapon>();
+        target = this.transform;
     }
 
     private void OnEnable()
     {
         inputActions.Enable();
-        inputActions.Player.Attack.performed += _ => Attack();
+       inputActions.Player.Attack.performed += _ => Attack();
     }
 
     private void OnDisable()
@@ -37,7 +42,17 @@ public class Hand : MonoBehaviour
 
     private void Update()
     {
-        UpdateSideBasedOnMouse();
+
+        if (playerController.isHoldingItem)
+        {
+            UpdateSideBasedOnMouse(0.55f);
+        }
+        else
+        {
+            UpdateSideBasedOnMouse(0.267f);
+        }
+       
+
     }
 
     private void Attack()
@@ -48,8 +63,8 @@ public class Hand : MonoBehaviour
     }
 
  
-    // Only switch the sword side (flip) based on whether the mouse is left/right of the player.
-    private void UpdateSideBasedOnMouse()
+     
+    private void UpdateSideBasedOnMouse(float offsetX)
     {
         if (Mouse.current == null || Camera.main == null)
             return;
@@ -59,15 +74,15 @@ public class Hand : MonoBehaviour
         Vector3 referenceWorldPos = (playerController != null) ? playerController.transform.position : transform.position;
         Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(referenceWorldPos);
 
-        Transform target = (activeWeapon != null) ? activeWeapon.transform : transform;
+        //Transform target = (activeWeapon != null) ? activeWeapon.transform : transform;
 
         // If mouse is left of player -> flip horizontally. Otherwise ensure default orientation.
-        float offsetX = 0.005f;
+         
 
         if (mousePos.x < playerScreenPoint.x)
         {
             // Flip horizontally (preserve Z rotation)
-            target.localEulerAngles = new Vector3(0, -180f, target.localEulerAngles.z);
+            target.localEulerAngles = new Vector3(180, -180, 180f);
 
             // Move slightly closer on the X axis
             target.localPosition = new Vector3(
@@ -78,8 +93,16 @@ public class Hand : MonoBehaviour
         }
         else
         {
-            target.localEulerAngles = new Vector3(0f, 0f, target.localEulerAngles.z);
-            
+            // Flip horizontally (preserve Z rotation)
+            target.localEulerAngles = new Vector3(0, 180f, 0);
+
+            // Move slightly closer on the X axis
+            target.localPosition = new Vector3(
+                Mathf.Abs(offsetX),
+                target.localPosition.y,
+                target.localPosition.z
+            );
+
         }
     }
 }
