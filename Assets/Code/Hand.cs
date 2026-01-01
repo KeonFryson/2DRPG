@@ -7,7 +7,7 @@ public class Hand : MonoBehaviour
 
     private InputSystem_Actions inputActions;
     private Animator animator;
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
     private PlayerController playerController;
     private ActiveWeapon activeWeapon;
     private PlayerController player;
@@ -21,7 +21,7 @@ public class Hand : MonoBehaviour
          
         inputActions = new InputSystem_Actions();
         animator = GetComponentInChildren<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         activeWeapon = GetComponent<ActiveWeapon>()
                       ?? GetComponentInChildren<ActiveWeapon>()
                       ?? GetComponentInParent<ActiveWeapon>();
@@ -43,13 +43,17 @@ public class Hand : MonoBehaviour
     private void Update()
     {
 
+        
+
         if (playerController.isHoldingItem)
         {
             UpdateSideBasedOnMouse(0.55f);
+            
         }
         else
         {
             UpdateSideBasedOnMouse(0.267f);
+            
         }
        
 
