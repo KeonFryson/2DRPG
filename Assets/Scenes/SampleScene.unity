@@ -212,6 +212,56 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e18e4d643776014e955d5c69357030e, type: 3}
+--- !u!1 &55165476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 55165478}
+  - component: {fileID: 55165477}
+  m_Layer: 0
+  m_Name: PathfindingGrid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &55165477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55165476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3895cd930d46a4e4e92148e0eac668ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AStarPathfinder
+  gridWorldSize: {x: 37.7, y: 22.8}
+  nodeRadius: 0.2
+  unwalkableMask:
+    serializedVersion: 2
+    m_Bits: 8
+  displayGridGizmos: 1
+--- !u!4 &55165478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55165476}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.12, y: -1.49, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &138140063
 GameObject:
   m_ObjectHideFlags: 0
@@ -9158,7 +9208,7 @@ GameObject:
   - component: {fileID: 395994940}
   - component: {fileID: 395994939}
   - component: {fileID: 395994938}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spr_tree2 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9413,7 +9463,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.56131, y: 3.45959, z: -10}
+  m_LocalPosition: {x: 17.64131, y: -0.20041013, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9609,7 +9659,7 @@ Transform:
   m_GameObject: {fileID: 660303647}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.56131, y: 3.45959, z: -10}
+  m_LocalPosition: {x: 17.64131, y: -0.20041013, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9708,7 +9758,7 @@ GameObject:
   - component: {fileID: 711432391}
   - component: {fileID: 711432390}
   - component: {fileID: 711432389}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spr_tree2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9837,7 +9887,7 @@ GameObject:
   - component: {fileID: 722904971}
   - component: {fileID: 722904970}
   - component: {fileID: 722904969}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spr_tree2 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9967,7 +10017,7 @@ GameObject:
   - component: {fileID: 798301630}
   - component: {fileID: 798301629}
   - component: {fileID: 798301628}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ForeGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13169,7 +13219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &812446485
 Animator:
   serializedVersion: 7
@@ -13227,7 +13277,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.29
 --- !u!212 &812446487
 SpriteRenderer:
   serializedVersion: 2
@@ -13338,17 +13388,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 812446484}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4798f657bd726b34eb32825a3177a658, type: 3}
+  m_Script: {fileID: 11500000, guid: ff0aaece65aaa6e48872a7b90f1d3da1, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  detectionRange: 4.93
-  detectionAngle: 32.68
-  moveSpeed: 3
+  m_EditorClassIdentifier: Assembly-CSharp::Slime
+  detectionRange: 5
+  detectionAngle: 90
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  moveSpeed: 5
   rotationSpeed: 5
+  stopDistance: 0.5
+  waypointReachedDistance: 0.3
+  pathUpdateInterval: 0.5
+  usePathfinding: 1
+  randomWalkSpeed: 5
+  randomWalkRadius: 5
+  idleTimeMin: 1
+  idleTimeMax: 3
   maxHealth: 100
   currentHealth: 0
   detectionTransform: {fileID: 0}
   showDetectionGizmos: 1
+  showPathGizmos: 1
   animator: {fileID: 0}
 --- !u!1 &1051192036
 GameObject:
@@ -13361,7 +13423,7 @@ GameObject:
   - component: {fileID: 1051192039}
   - component: {fileID: 1051192038}
   - component: {fileID: 1051192037}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spr_tree2 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13495,7 +13557,7 @@ GameObject:
   - component: {fileID: 1141541822}
   - component: {fileID: 1141541821}
   - component: {fileID: 1141541820}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spr_tree1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13612,6 +13674,71 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1960603245}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1236505705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1236505707}
+  - component: {fileID: 1236505706}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1236505706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236505705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4798f657bd726b34eb32825a3177a658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  detectionRange: 5
+  detectionAngle: 63.9
+  obstacleLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  moveSpeed: 3
+  rotationSpeed: 5
+  stopDistance: 0.5
+  waypointReachedDistance: 0.3
+  pathUpdateInterval: 0.5
+  usePathfinding: 1
+  randomWalkSpeed: 3
+  randomWalkRadius: 5
+  idleTimeMin: 1
+  idleTimeMax: 3
+  maxHealth: 100
+  currentHealth: 0
+  detectionTransform: {fileID: 0}
+  showDetectionGizmos: 1
+  showPathGizmos: 1
+  animator: {fileID: 0}
+--- !u!4 &1236505707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236505705}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.63864, y: 3.75066, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1285272561
 GameObject:
@@ -13742,7 +13869,7 @@ GameObject:
   - component: {fileID: 1458290047}
   - component: {fileID: 1458290046}
   - component: {fileID: 1458290045}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spr_tree2 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13871,7 +13998,7 @@ GameObject:
   - component: {fileID: 1465352690}
   - component: {fileID: 1465352689}
   - component: {fileID: 1465352688}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spr_tree2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14000,7 +14127,7 @@ GameObject:
   - component: {fileID: 1522425432}
   - component: {fileID: 1522425431}
   - component: {fileID: 1522425430}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spr_tree1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14134,7 +14261,7 @@ GameObject:
   - component: {fileID: 1703730755}
   - component: {fileID: 1703730754}
   - component: {fileID: 1703730753}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spr_tree2 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14268,7 +14395,7 @@ GameObject:
   - component: {fileID: 1845993427}
   - component: {fileID: 1845993426}
   - component: {fileID: 1845993425}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spr_tree2 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14397,7 +14524,7 @@ GameObject:
   - component: {fileID: 1865935103}
   - component: {fileID: 1865935102}
   - component: {fileID: 1865935101}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spr_tree2 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14524,7 +14651,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1960603245}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Eveironment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14573,7 +14700,7 @@ GameObject:
   - component: {fileID: 2042449523}
   - component: {fileID: 2042449522}
   - component: {fileID: 2042449521}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spr_tree2 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14702,7 +14829,7 @@ GameObject:
   - component: {fileID: 2051076521}
   - component: {fileID: 2051076520}
   - component: {fileID: 2051076519}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: spr_tree2 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14940,7 +15067,7 @@ Transform:
   m_GameObject: {fileID: 3523374419537199821}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 14.08, y: -3.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15029,6 +15156,10 @@ PrefabInstance:
     - target: {fileID: 6072652357240575772, guid: 1a4e498063267f64d928afc9d78ebca2, type: 3}
       propertyPath: m_Name
       value: Bush
+      objectReference: {fileID: 0}
+    - target: {fileID: 6072652357240575772, guid: 1a4e498063267f64d928afc9d78ebca2, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7296284653793527221, guid: 1a4e498063267f64d928afc9d78ebca2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15166,6 +15297,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: spr_tree2
       objectReference: {fileID: 0}
+    - target: {fileID: 1769019291726761260, guid: 802c5617b5d910b42840f8a4f1c8b680, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15250,6 +15385,10 @@ PrefabInstance:
     - target: {fileID: 8341346074929379026, guid: db38df77e1806674e957a01402b6ad9c, type: 3}
       propertyPath: m_Name
       value: spr_tree1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8341346074929379026, guid: db38df77e1806674e957a01402b6ad9c, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15486,3 +15625,5 @@ SceneRoots:
   - {fileID: 548615147}
   - {fileID: 1960603245}
   - {fileID: 812446488}
+  - {fileID: 55165478}
+  - {fileID: 1236505707}

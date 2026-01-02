@@ -2,16 +2,15 @@ using UnityEngine;
 
 public class Slime : Enemy
 {
-
-
-    void Start()
+    private new void Start()
     {
-        
+        base.Start();
+        // Slime-specific initialization here
     }
 
-    // Update is called once per frame
-    void Update()
+    private new void Update()
     {
-        
+        base.Update();
+        // Slime-specific update logic here
     }
 }
