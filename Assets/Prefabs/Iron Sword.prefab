@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568c46bc30991934783b3cad9e3d7abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sword
-  damage: 25
+  swordItemData: {fileID: 11400000, guid: e387bf6992969504c8237e1724422d0e, type: 2}
 --- !u!58 &5746313018277822020
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -391,5 +391,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
   item: {fileID: 11400000, guid: e387bf6992969504c8237e1724422d0e, type: 2}
-  containerTransform: {fileID: 0}
   pickupTrigger: {fileID: 5746313018277822020}
+  player: {fileID: 0}

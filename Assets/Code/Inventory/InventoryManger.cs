@@ -105,7 +105,9 @@ public class InventoryManger : MonoBehaviour
             if (itemToDrop != null && itemToDrop.item != null && itemToDrop.item.itemPrefab != null)
             {
                 // Spawn the item in the world near the player
-                Vector3 dropPosition = playerController.transform.position + (Vector3)Random.insideUnitCircle.normalized * 1.5f;
+                Vector3 forward  = transform.localPosition.normalized * 2f;
+
+                Vector3 dropPosition = playerController.transform.position + forward;
                 GameObject droppedItem = Instantiate(itemToDrop.item.itemPrefab, dropPosition, itemToDrop.item.itemPrefab.transform.rotation);
 
                 Debug.Log("Dropped: " + itemToDrop.item.itemName);
@@ -118,6 +120,10 @@ public class InventoryManger : MonoBehaviour
 
     void UpdateSlotSelection()
     {
+
+        if (playerController.isDead)
+            return;
+
         for (int i = 0; i < inventorySlots.Count; i++)
         {
             inventorySlots[i].SetSelected(i == currentSelectedSlot);

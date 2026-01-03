@@ -3,7 +3,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Player Settings")]
+    [SerializeField] public int maxHealth = 100;
+    private int currentHealth;
+    [SerializeField] public int maxMana = 50;
+    private int currentMana;
 
+    [Header("Movement Settings")]
     [SerializeField] private float defaultMoveSpeed = 5f;
     [SerializeField] private float sprintSpeedBoost = 2.5f;
 
@@ -14,18 +20,23 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     bool isSprinting = false;
+    public bool isDead = false;
     public bool isHoldingItem = false;
 
     // Public read-only property used by other classes to query which side the player is facing
     public bool FacingLeft => spriteRenderer != null && spriteRenderer.flipX;
 
+
     private void Awake()
     {
+
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
         inputActions = new InputSystem_Actions();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        currentHealth = maxHealth;
+        currentMana = maxMana;
     }
 
     private void OnEnable()
@@ -45,6 +56,9 @@ public class PlayerController : MonoBehaviour
     }
     private void PlayerInput()
     {
+        if(isDead)
+            return;
+
         movement = inputActions.Player.Move.ReadValue<Vector2>();
         inputActions.Player.Sprint.performed += ctx => isSprinting = true;
         inputActions.Player.Sprint.canceled += ctx => isSprinting = false;
@@ -56,7 +70,7 @@ public class PlayerController : MonoBehaviour
     private void AdjustPlayerFacingDirection()
     {
         // Use the new Input System to get pointer/mouse position to avoid InvalidOperationException
-        if (Mouse.current == null)
+        if (Mouse.current == null || isDead)
             return;
 
         Vector2 mousePos = Mouse.current.position.ReadValue();
@@ -87,5 +101,57 @@ public class PlayerController : MonoBehaviour
     {
         Move();
     }
+
+    public void TakeDamge(int damage)
+    {
+        // Implement damage logic here
+        Debug.Log("Player took " + damage + " damage.");
+        currentHealth -= damage;
+
+
+        if (currentHealth <= 0)
+        {
+            Debug.Log("Player has died.");
+            rb.linearVelocity = Vector2.zero;
+            movement = Vector2.zero;
+            animator.SetFloat("moveX", 0);
+            animator.SetFloat("moveY", 0);
+            isDead = true;
+            // Implement player death logic here
+        }
+    }
+
+    public void HealHeath(int amount)
+    {
+        // Implement healing logic here
+        Debug.Log("Player healed " + amount + " health.");
+        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+
+    }
+
+    public void RestoreMana(int amount)
+    {
+        // Implement mana restoration logic here
+        Debug.Log("Player restored " + amount + " mana.");
+        currentMana = Mathf.Min(currentMana + amount, maxMana);
+    }
+
+    public void ConsumeMana(int amount)
+    {
+        // Implement mana consumption logic here
+        Debug.Log("Player consumed " + amount + " mana.");
+        currentMana = Mathf.Max(currentMana - amount, 0);
+    }
+
+    public int GetCurrentHeath()
+    {
+        return currentHealth;
+    }
+
+    public int GetCurrentMana()
+    {
+        return currentMana;
+    }
+
 
 }

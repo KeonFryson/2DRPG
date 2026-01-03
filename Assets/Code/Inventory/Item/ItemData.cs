@@ -10,4 +10,8 @@ public class ItemData : ScriptableObject
     [SerializeField][Range(1,999)] public int maxStackSize;
     [SerializeField] public Sprite itemIcon;
     [SerializeField] public GameObject itemPrefab;
+
+    [SerializeField] public int damage;
+    [SerializeField] public int healingAmount;
+
 }

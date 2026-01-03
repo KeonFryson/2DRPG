@@ -4,8 +4,8 @@ using UnityEngine;
 public class Sword : MonoBehaviour
 {
     [Header("Sword Settings")]
-    [SerializeField] private int damage = 25;
-
+     
+    [SerializeField] private ItemData swordItemData;
     public void OnHit(Collider2D collision)
     {
  
@@ -16,7 +16,7 @@ public class Sword : MonoBehaviour
             Enemy enemy = collision.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.TakeDamage(damage);
+                enemy.TakeDamage(swordItemData.damage);
             }
         }
     }

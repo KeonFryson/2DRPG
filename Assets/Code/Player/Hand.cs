@@ -61,6 +61,10 @@ public class Hand : MonoBehaviour
 
     private void Update()
     {
+        if (playerController == null || playerController.isDead)
+            return;
+
+
         UpdateHeldItem();
 
         if (playerController.isHoldingItem)
@@ -148,6 +152,10 @@ public class Hand : MonoBehaviour
 
     private void Attack()
     {
+
+        if (playerController == null || playerController.isDead)
+            return;
+
         animator.SetTrigger("Attack");
         animator.SetBool("isHoldingSword", playerController.isHoldingItem);
 
