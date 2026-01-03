@@ -1,30 +1,34 @@
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class Inventroy : MonoBehaviour
 {
+    public static event Action<List<InventoryItem>> OnInventoryChanged;
 
-    public List<InventroyItem> inventory;
-    private Dictionary<int, List<InventroyItem>> itemDictionary;
+    public List<InventoryItem> inventory;
+    private Dictionary<int, List<InventoryItem>> itemDictionary;
 
-    [SerializeField] private int maxInventorySize = 6; // Maximum number of inventory slots
+
+
+    [SerializeField] private int maxInventorySize = 4; // Maximum number of inventory slots
 
 
     private void Awake()
     {
-        inventory = new List<InventroyItem>();
-        itemDictionary = new Dictionary<int, List<InventroyItem>>();
+        inventory = new List<InventoryItem>();
+        itemDictionary = new Dictionary<int, List<InventoryItem>>();
     }
 
 
     public bool Add(ItemData item)
     {
-        if (itemDictionary.TryGetValue(item.itemID, out List<InventroyItem> itemStacks))
+        if (itemDictionary.TryGetValue(item.itemID, out List<InventoryItem> itemStacks))
         {
             // Try to add to an existing stack that isn't full
-            InventroyItem stackWithSpace = itemStacks.FirstOrDefault(stack =>
+            InventoryItem stackWithSpace = itemStacks.FirstOrDefault(stack =>
                 item.maxStackSize > 1 && stack.stackSize < item.maxStackSize);
 
             if (stackWithSpace != null)
@@ -43,10 +47,11 @@ public class Inventroy : MonoBehaviour
                 }
 
                 // Create new stack/entry
-                InventroyItem newInventroyItem = new InventroyItem(item);
+                InventoryItem newInventroyItem = new InventoryItem(item);
                 inventory.Add(newInventroyItem);
                 itemStacks.Add(newInventroyItem);
                 Debug.Log("Created new stack for: " + item.itemName);
+                OnInventoryChanged?.Invoke(inventory);
                 return true;
             }
         }
@@ -60,20 +65,21 @@ public class Inventroy : MonoBehaviour
             }
 
             // First instance of this item type
-            InventroyItem newInventroyItem = new InventroyItem(item);
+            InventoryItem newInventroyItem = new InventoryItem(item);
             inventory.Add(newInventroyItem);
-            itemDictionary.Add(item.itemID, new List<InventroyItem> { newInventroyItem });
+            itemDictionary.Add(item.itemID, new List<InventoryItem> { newInventroyItem });
             Debug.Log("Added new item to inventory: " + item.itemName);
+            OnInventoryChanged?.Invoke(inventory);
             return true;
         }
     }
 
     public void Remove(ItemData item)
     {
-        if (itemDictionary.TryGetValue(item.itemID, out List<InventroyItem> itemStacks) && itemStacks.Count > 0)
+        if (itemDictionary.TryGetValue(item.itemID, out List<InventoryItem> itemStacks) && itemStacks.Count > 0)
         {
             // Remove from the first available stack
-            InventroyItem inventroyItem = itemStacks[0];
+            InventoryItem inventroyItem = itemStacks[0];
             inventroyItem.RemoveFromStack();
 
             if (inventroyItem.stackSize <= 0)
@@ -86,6 +92,7 @@ public class Inventroy : MonoBehaviour
                 {
                     itemDictionary.Remove(item.itemID);
                 }
+                OnInventoryChanged?.Invoke(inventory);
             }
             Debug.Log("Removed item from inventory: " + item.itemName + " New stack size: " + inventroyItem.stackSize);
         }

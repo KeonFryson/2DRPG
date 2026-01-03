@@ -3,12 +3,12 @@ using UnityEngine;
 
 [System.Serializable]
 
-public class InventroyItem
+public class InventoryItem
 {
     public ItemData item;
     public int stackSize;
 
-    public InventroyItem(ItemData item)
+    public InventoryItem(ItemData item)
     {
         this.item = item;
 

@@ -1,25 +1,43 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
-[System.Serializable]
-public class InventorySlot
-{
-    public ItemData item;
-    public int quantity;
+public class InventorySlot: MonoBehaviour
+{ 
+    public Image icon;
+    public Image border;
+    public TMP_Text quantityText;
 
-    public InventorySlot(ItemData item, int quantity)
+    public void ClearSlot()
     {
-        this.item = item;
-        this.quantity = quantity;
+        icon.enabled = false;
+        quantityText.enabled = false;
     }
 
-    public bool IsEmpty()
+    public void EnableSlot()
     {
-        return item == null || quantity <= 0;
+        icon.enabled = true;
+        quantityText.enabled = true;
     }
 
-    public void Clear()
+public void DrawSlot(InventoryItem item)
     {
-        item = null;
-        quantity = 0;
+        if(item == null)
+        {
+            ClearSlot();
+            return;
+        }
+        EnableSlot();
+
+        icon.sprite = item.item.itemIcon;
+        quantityText.text = item.stackSize.ToString();
+
     }
+
+    public void SetSelected(bool isSelected)
+    {
+        border.enabled = isSelected;
+         
+    }
+
 }
