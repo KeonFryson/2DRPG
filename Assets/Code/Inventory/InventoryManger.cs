@@ -13,10 +13,21 @@ public class InventoryManger : MonoBehaviour
 
     private int currentSelectedSlot = 0;
     private InputSystem_Actions inputActions;
-
+    private Inventroy inventory;
+    public PlayerController playerController;
     private void Awake()
-    {
+    { 
         inputActions = new InputSystem_Actions();
+        inventory = GetComponent<Inventroy>();
+        playerController = GetComponent<PlayerController>();
+        if (inventory == null)
+        {
+            inventory = FindFirstObjectByType<Inventroy>();
+        }
+        if(playerController == null)
+        {
+            playerController = FindFirstObjectByType<PlayerController>();
+        }
     }
 
     private void Start()
@@ -32,6 +43,7 @@ public class InventoryManger : MonoBehaviour
         inputActions.Player.Enable();
         inputActions.Player.ScrollInventory.performed += OnScrollInventory;
         inputActions.Player.SelectSlot.performed += OnSelectSlot;
+        inputActions.Player.DropItem.performed += OnDropItem;
     }
 
     public void OnDisable()
@@ -40,6 +52,7 @@ public class InventoryManger : MonoBehaviour
 
         inputActions.Player.ScrollInventory.performed -= OnScrollInventory;
         inputActions.Player.SelectSlot.performed -= OnSelectSlot;
+        inputActions.Player.DropItem.performed -= OnDropItem;
         inputActions.Player.Disable();
     }
 
@@ -75,6 +88,30 @@ public class InventoryManger : MonoBehaviour
             {
                 currentSelectedSlot = slotIndex;
                 UpdateSlotSelection();
+            }
+        }
+    }
+
+    private void OnDropItem(InputAction.CallbackContext context)
+    {
+        if (inventory == null || inventory.inventory == null || inventory.inventory.Count == 0)
+            return;
+
+        // Check if the current selected slot has an item
+        if (currentSelectedSlot < inventory.inventory.Count)
+        {
+            InventoryItem itemToDrop = inventory.inventory[currentSelectedSlot];
+
+            if (itemToDrop != null && itemToDrop.item != null && itemToDrop.item.itemPrefab != null)
+            {
+                // Spawn the item in the world near the player
+                Vector3 dropPosition = playerController.transform.position + (Vector3)Random.insideUnitCircle.normalized * 1.5f;
+                GameObject droppedItem = Instantiate(itemToDrop.item.itemPrefab, dropPosition, itemToDrop.item.itemPrefab.transform.rotation);
+
+                Debug.Log("Dropped: " + itemToDrop.item.itemName);
+
+                // Remove the item from inventory
+                inventory.Remove(itemToDrop.item);
             }
         }
     }

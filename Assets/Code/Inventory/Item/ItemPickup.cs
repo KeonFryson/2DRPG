@@ -7,6 +7,7 @@ public class ItemPickup : MonoBehaviour
     private Inventroy Inventroy;
     public CircleCollider2D pickupTrigger;
     public GameObject player;
+    private bool hasBeenPickedUp = false;
 
     private void Awake()
     {
@@ -23,15 +24,16 @@ public class ItemPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !hasBeenPickedUp)
         {
             PickUpItem();
         }
     }
 
-    
+
     private void PickUpItem()
     {
+        hasBeenPickedUp = true;
         bool wasAdded = Inventroy.Add(item);
         if (wasAdded)
         {
@@ -41,6 +43,7 @@ public class ItemPickup : MonoBehaviour
         else
         {
             Debug.Log("Could not pick up: " + item.itemName + ". Inventory may be full.");
+            hasBeenPickedUp = false; // Reset flag if item wasn't actually picked up
         }
     }
 }

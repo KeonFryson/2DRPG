@@ -1,59 +1,60 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour
 {
     [Header("Detection Settings")]
-    [SerializeField] private float detectionRange = 10f;
-    [SerializeField] private float detectionAngle = 45f;
-    [SerializeField] private LayerMask obstacleLayers;
+    [SerializeField] protected float detectionRange = 10f;
+    [SerializeField] protected float detectionAngle = 45f;
+    [SerializeField] protected LayerMask obstacleLayers;
 
     [Header("Movement Settings")]
-    [SerializeField] private float moveSpeed = 3f;
-    [SerializeField] private float rotationSpeed = 5f;
-    [SerializeField] private float stopDistance = 0.5f;
-    [SerializeField] private float waypointReachedDistance = 0.3f;
-    private Rigidbody2D rb;
+    [SerializeField] protected float moveSpeed = 3f;
+    [SerializeField] protected float rotationSpeed = 5f;
+    [SerializeField] protected float stopDistance = 0.5f;
+    [SerializeField] protected float waypointReachedDistance = 0.3f;
+    protected Rigidbody2D rb;
 
     [Header("Pathfinding Settings")]
-    [SerializeField] private float pathUpdateInterval = 0.5f;
-    [SerializeField] private bool usePathfinding = true;
-    private float pathUpdateTimer = 0f;
-    private List<Vector2> currentPath;
-    private int currentWaypointIndex = 0;
+    [SerializeField] protected float pathUpdateInterval = 0.5f;
+    [SerializeField] protected bool usePathfinding = true;
+    protected float pathUpdateTimer = 0f;
+    protected List<Vector2> currentPath;
+    protected int currentWaypointIndex = 0;
 
     [Header("Random Walking Settings")]
-    [SerializeField] private float randomWalkSpeed = 1.5f;
-    //[SerializeField] private float randomWalkInterval = 3f;
-    [SerializeField] private float randomWalkRadius = 5f;
-    [SerializeField] private float idleTimeMin = 1f;
-    [SerializeField] private float idleTimeMax = 3f;
-    private Vector2 randomWalkTarget;
-    //private float randomWalkTimer = 0f;
-    private bool isWalking = false;
-    private float idleTimer = 0f;
+    [SerializeField] protected float randomWalkSpeed = 1.5f;
+    [SerializeField] protected float randomWalkRadius = 5f;
+    [SerializeField] protected float idleTimeMin = 1f;
+    [SerializeField] protected float idleTimeMax = 3f;
+    protected Vector2 randomWalkTarget;
+    protected bool isWalking = false;
+    protected float idleTimer = 0f;
 
     [Header("Health Settings")]
-    [SerializeField] private int maxHealth = 100;
-    [SerializeField] private int currentHealth;
+    [SerializeField] protected int maxHealth = 100;
+    [SerializeField] protected int currentHealth;
+    [SerializeField] protected float deathAnimationDuration = 1f;
 
     [Header("References")]
-    [SerializeField] private Transform detectionTransform;
+    [SerializeField] protected Transform detectionTransform;
 
     [Header("Debug")]
-    [SerializeField] private bool showDetectionGizmos = true;
-    [SerializeField] private bool showPathGizmos = true;
+    [SerializeField] protected bool showDetectionGizmos = true;
+    [SerializeField] protected bool showPathGizmos = true;
 
-    private Transform player;
-    private bool playerDetected = false;
-    private bool playerInPursuitMode = false;
-    private Vector2 lastKnownPlayerPosition;
-    private bool hasLastKnownPosition = false;
-    private SpriteRenderer spriteRenderer;
+    protected Transform player;
+    protected bool playerDetected = false;
+    protected bool playerInPursuitMode = false;
+    protected Vector2 lastKnownPlayerPosition;
+    protected bool hasLastKnownPosition = false;
+    protected SpriteRenderer spriteRenderer;
     public Animator animator;
+    protected bool isDead = false;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true;
@@ -70,7 +71,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Start()
+    protected virtual void Start()
     {
         currentHealth = maxHealth;
 
@@ -87,45 +88,39 @@ public class Enemy : MonoBehaviour
         SetNewRandomWalkTarget();
     }
 
-    public void Update()
+    protected virtual void Update()
     {
-        if (player == null) return;
+        if (player == null || isDead) return;
 
         playerDetected = IsPlayerInDetectionCone();
 
-        // If player is detected in cone, enter pursuit mode
         if (playerDetected)
         {
             playerInPursuitMode = true;
             lastKnownPlayerPosition = player.position;
             hasLastKnownPosition = true;
         }
-        // If in pursuit mode, check if player is still in range
         else if (playerInPursuitMode)
         {
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
             if (distanceToPlayer <= detectionRange)
             {
-                // Player still in range, check for obstacles
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, (player.position - transform.position).normalized, distanceToPlayer, obstacleLayers);
 
                 if (hit.collider == null)
                 {
-                    // No obstacles, continue pursuing
                     playerDetected = true;
                     lastKnownPlayerPosition = player.position;
                     hasLastKnownPosition = true;
                 }
                 else
                 {
-                    // Obstacle blocking view, exit pursuit mode
                     playerInPursuitMode = false;
                 }
             }
             else
             {
-                // Player left detection range, exit pursuit mode
                 playerInPursuitMode = false;
             }
         }
@@ -146,9 +141,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
-        if (player == null) return;
+        if (player == null || isDead) return;
 
         if (usePathfinding && currentPath != null && currentPath.Count > 0)
         {
@@ -160,7 +155,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void UpdateRandomWalk()
+    protected virtual void UpdateRandomWalk()
     {
         if (isWalking)
         {
@@ -181,7 +176,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void SetNewRandomWalkTarget()
+    protected virtual void SetNewRandomWalkTarget()
     {
         int maxAttempts = 10;
         int attempts = 0;
@@ -192,12 +187,10 @@ public class Enemy : MonoBehaviour
             Vector2 randomDirection = Random.insideUnitCircle * randomWalkRadius;
             Vector2 potentialTarget = (Vector2)transform.position + randomDirection;
 
-            // Check if there's an obstacle at the target position
             Collider2D hit = Physics2D.OverlapCircle(potentialTarget, waypointReachedDistance, obstacleLayers);
 
             if (hit == null)
             {
-                // Also check if there's a clear path to the target
                 RaycastHit2D pathCheck = Physics2D.Raycast(transform.position, randomDirection.normalized, randomDirection.magnitude, obstacleLayers);
 
                 if (pathCheck.collider == null)
@@ -210,7 +203,6 @@ public class Enemy : MonoBehaviour
             attempts++;
         }
 
-        // If no valid target found after max attempts, just stay in place
         if (!validTargetFound)
         {
             randomWalkTarget = transform.position;
@@ -219,7 +211,7 @@ public class Enemy : MonoBehaviour
         isWalking = true;
     }
 
-    private void UpdatePath()
+    protected virtual void UpdatePath()
     {
         if (AStarPathfinder.Instance == null)
         {
@@ -260,7 +252,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void FollowPath()
+    protected virtual void FollowPath()
     {
         if (currentPath == null || currentPath.Count == 0)
         {
@@ -291,7 +283,7 @@ public class Enemy : MonoBehaviour
         MoveTowardsPosition(targetWaypoint);
     }
 
-    private void FallbackMovement()
+    protected virtual void FallbackMovement()
     {
         if (playerDetected)
         {
@@ -321,7 +313,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private bool IsPlayerInDetectionCone()
+    protected virtual bool IsPlayerInDetectionCone()
     {
         Vector2 directionToPlayer = (player.position - transform.position);
         float distanceToPlayer = directionToPlayer.magnitude;
@@ -349,7 +341,7 @@ public class Enemy : MonoBehaviour
         return true;
     }
 
-    private void MoveTowardsPosition(Vector2 targetPosition, float speed = -1f)
+    protected virtual void MoveTowardsPosition(Vector2 targetPosition, float speed = -1f)
     {
         if (speed < 0) speed = moveSpeed;
 
@@ -381,14 +373,17 @@ public class Enemy : MonoBehaviour
         animator.SetFloat("moveY", direction.y);
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
+        if (isDead) return;
+
         currentHealth -= damage;
-        Debug.Log($"Enemy took {damage} damage, current health: {currentHealth}");
+        animator.SetTrigger("hurt");
+        Debug.Log($"{GetType().Name} took {damage} damage, current health: {currentHealth}");
+
         if (currentHealth <= 0)
         {
             Die();
-            Debug.Log("Enemy died.");
         }
     }
 
@@ -397,12 +392,21 @@ public class Enemy : MonoBehaviour
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
     }
 
-    private void Die()
+    protected virtual void Die()
     {
+        isDead = true;
+        rb.linearVelocity = Vector2.zero;
+        animator.SetBool("isDead", isDead);
+        StartCoroutine(DeathCoroutine());
+    }
+
+    protected virtual IEnumerator DeathCoroutine()
+    {
+        yield return new WaitForSeconds(deathAnimationDuration);
         Destroy(gameObject);
     }
 
-    private void OnDrawGizmos()
+    protected virtual void OnDrawGizmos()
     {
         if (!showDetectionGizmos) return;
 
