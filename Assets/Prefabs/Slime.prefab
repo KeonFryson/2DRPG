@@ -209,7 +209,8 @@ MonoBehaviour:
   idleTimeMax: 3
   maxHealth: 100
   currentHealth: 0
+  deathAnimationDuration: 1
   detectionTransform: {fileID: 0}
-  showDetectionGizmos: 1
+  showDetectionGizmos: 0
   showPathGizmos: 1
   animator: {fileID: 0}

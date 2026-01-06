@@ -233,6 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86e3d84cac7b1d541a71252f5417536d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HitBox
+  isDebug: 0
 --- !u!1 &4472452814026660851
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,8 +245,8 @@ GameObject:
   - component: {fileID: 4360847804838727050}
   - component: {fileID: 8255332551835653717}
   - component: {fileID: 2437033752148048129}
-  - component: {fileID: 5746313018277822020}
   - component: {fileID: 2113832394017812718}
+  - component: {fileID: 5746313018277822020}
   m_Layer: 0
   m_Name: Iron Sword
   m_TagString: Untagged
@@ -342,6 +343,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sword
   swordItemData: {fileID: 11400000, guid: e387bf6992969504c8237e1724422d0e, type: 2}
+--- !u!114 &2113832394017812718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4472452814026660851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f451f2ebdf454c047a8be3b250ae49da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
+  item: {fileID: 11400000, guid: e387bf6992969504c8237e1724422d0e, type: 2}
+  pickupTrigger: {fileID: 5746313018277822020}
+  player: {fileID: 0}
 --- !u!58 &5746313018277822020
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -378,18 +394,3 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.30061454, y: 0.30061454}
   m_Radius: 0.8
---- !u!114 &2113832394017812718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4472452814026660851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f451f2ebdf454c047a8be3b250ae49da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
-  item: {fileID: 11400000, guid: e387bf6992969504c8237e1724422d0e, type: 2}
-  pickupTrigger: {fileID: 5746313018277822020}
-  player: {fileID: 0}

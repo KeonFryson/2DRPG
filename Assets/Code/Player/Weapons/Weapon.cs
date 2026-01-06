@@ -34,7 +34,9 @@ public class Weapon : MonoBehaviour
         {
             weaponCollider = GetComponentInChildren<Collider2D>();
         }
-        weaponCollider.enabled = false;
+       
+        if (weaponCollider != null)
+            weaponCollider.enabled = false;
     }
 
 // Call this method after a child weapon is added to activate its trail

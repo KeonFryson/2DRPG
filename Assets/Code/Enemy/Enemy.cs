@@ -38,6 +38,9 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected int currentHealth;
     [SerializeField] protected float deathAnimationDuration = 1f;
 
+    [Header("AI Settings")]
+    [SerializeField] protected bool isAIEnabled = true;
+
     [Header("References")]
     [SerializeField] protected Transform detectionTransform;
 
@@ -90,7 +93,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (player == null || isDead) return;
+        if (player == null || isDead || !isAIEnabled) return;
 
         playerDetected = IsPlayerInDetectionCone();
 
@@ -143,7 +146,13 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
-        if (player == null || isDead) return;
+        if (player == null || isDead || !isAIEnabled)
+        {
+            rb.linearVelocity = Vector2.zero;
+            animator.SetFloat("moveX", 0);
+            animator.SetFloat("moveY", 0);
+            return;
+        }
 
         if (usePathfinding && currentPath != null && currentPath.Count > 0)
         {
@@ -404,6 +413,30 @@ public abstract class Enemy : MonoBehaviour
     {
         yield return new WaitForSeconds(deathAnimationDuration);
         Destroy(gameObject);
+    }
+
+    public void EnableAI()
+    {
+        isAIEnabled = true;
+    }
+
+    public void DisableAI()
+    {
+        isAIEnabled = false;
+        rb.linearVelocity = Vector2.zero;
+        animator.SetFloat("moveX", 0);
+        animator.SetFloat("moveY", 0);
+    }
+
+    public void ToggleAI()
+    {
+        isAIEnabled = !isAIEnabled;
+        if (!isAIEnabled)
+        {
+            rb.linearVelocity = Vector2.zero;
+            animator.SetFloat("moveX", 0);
+            animator.SetFloat("moveY", 0);
+        }
     }
 
     protected virtual void OnDrawGizmos()
