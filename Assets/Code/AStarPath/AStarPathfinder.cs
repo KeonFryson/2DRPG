@@ -7,17 +7,20 @@ public class AStarPathfinder : MonoBehaviour
 
     [Header("Grid Settings")]
     [SerializeField] private Vector2 gridWorldSize = new Vector2(50f, 50f);
-    [SerializeField] private float nodeRadius = 0.5f;
+    [SerializeField] private float nodeRadius = 0.2f;
     [SerializeField] private LayerMask unwalkableMask;
 
     [Header("Debug")]
     [SerializeField] private bool displayGridGizmos = false;
     [SerializeField][Range(0f, 1f)] private float gridAlpha = 0.3f;
- 
+
+    [SerializeField] private Data data;
 
     private PathNode[,] grid;
     private float nodeDiameter;
     private int gridSizeX, gridSizeY;
+    private float gridUpdateTimer = 0f;
+    private const float GRID_UPDATE_INTERVAL = 5f;
 
     private void Awake()
     {
@@ -31,10 +34,31 @@ public class AStarPathfinder : MonoBehaviour
             return;
         }
 
+        if (data != null)
+        {
+            gridWorldSize.x = data.value;
+            gridWorldSize.y = data.value;
+        }
+        else
+        {
+            Debug.LogWarning("Data asset not assigned in AStarPathfinder. Using default grid size.");
+        }
+
         nodeDiameter = nodeRadius * 2;
         gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
         gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
         CreateGrid();
+    }
+
+    private void Update()
+    {
+        gridUpdateTimer += Time.deltaTime;
+
+        if (gridUpdateTimer >= GRID_UPDATE_INTERVAL)
+        {
+            CreateGrid();
+            gridUpdateTimer = 0f;
+        }
     }
 
     private void CreateGrid()
@@ -223,7 +247,7 @@ public class AStarPathfinder : MonoBehaviour
             }
         }
 
-        
+
     }
 }
 

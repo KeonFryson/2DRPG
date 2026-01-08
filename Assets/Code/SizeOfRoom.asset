@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e32201cdff6eba14b95baf6e2085190c, type: 3}
-  m_Name: InventorySize
+  m_Name: SizeOfRoom
   m_EditorClassIdentifier: Assembly-CSharp::Data
-  value: 0
+  value: 40

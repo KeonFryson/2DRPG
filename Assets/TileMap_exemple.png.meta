@@ -1,12 +1,156 @@
 fileFormatVersion: 2
-guid: 04f1cab56db74f0478429790b7d04cf9
+guid: 7385acd73bbe53a468aa59b8c6f566ca
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6243134052031417624
-    second: plains_0
+      213: 21300000
+    second: Platform_cave_no_slopes_0
+  - first:
+      213: 21300002
+    second: Platform_cave_no_slopes_1
+  - first:
+      213: 21300004
+    second: Platform_cave_no_slopes_2
+  - first:
+      213: 21300006
+    second: Platform_cave_no_slopes_3
+  - first:
+      213: 21300008
+    second: Platform_cave_no_slopes_4
+  - first:
+      213: 21300010
+    second: Platform_cave_no_slopes_5
+  - first:
+      213: 21300012
+    second: Platform_cave_no_slopes_6
+  - first:
+      213: 21300014
+    second: Platform_cave_no_slopes_7
+  - first:
+      213: 21300016
+    second: Platform_cave_no_slopes_8
+  - first:
+      213: 21300018
+    second: Platform_cave_no_slopes_9
+  - first:
+      213: 21300020
+    second: Platform_cave_no_slopes_10
+  - first:
+      213: 21300022
+    second: Platform_cave_no_slopes_11
+  - first:
+      213: 21300024
+    second: Platform_cave_no_slopes_12
+  - first:
+      213: 21300026
+    second: Platform_cave_no_slopes_13
+  - first:
+      213: 21300028
+    second: Platform_cave_no_slopes_14
+  - first:
+      213: 21300030
+    second: Platform_cave_no_slopes_15
+  - first:
+      213: 21300032
+    second: Platform_cave_no_slopes_16
+  - first:
+      213: 21300034
+    second: Platform_cave_no_slopes_17
+  - first:
+      213: 21300036
+    second: Platform_cave_no_slopes_18
+  - first:
+      213: 21300038
+    second: Platform_cave_no_slopes_19
+  - first:
+      213: 21300040
+    second: Platform_cave_no_slopes_20
+  - first:
+      213: 21300042
+    second: Platform_cave_no_slopes_21
+  - first:
+      213: 21300044
+    second: Platform_cave_no_slopes_22
+  - first:
+      213: 21300046
+    second: Platform_cave_no_slopes_23
+  - first:
+      213: 21300048
+    second: Platform_cave_no_slopes_24
+  - first:
+      213: 21300050
+    second: Platform_cave_no_slopes_25
+  - first:
+      213: 21300052
+    second: Platform_cave_no_slopes_26
+  - first:
+      213: 21300054
+    second: Platform_cave_no_slopes_27
+  - first:
+      213: 21300056
+    second: Platform_cave_no_slopes_28
+  - first:
+      213: 21300058
+    second: Platform_cave_no_slopes_29
+  - first:
+      213: 21300060
+    second: Platform_cave_no_slopes_30
+  - first:
+      213: 21300062
+    second: Platform_cave_no_slopes_31
+  - first:
+      213: 21300064
+    second: Platform_cave_no_slopes_32
+  - first:
+      213: 21300066
+    second: Platform_cave_no_slopes_33
+  - first:
+      213: 21300068
+    second: Platform_cave_no_slopes_34
+  - first:
+      213: 21300070
+    second: Platform_cave_no_slopes_35
+  - first:
+      213: 21300072
+    second: Platform_cave_no_slopes_36
+  - first:
+      213: 21300074
+    second: Platform_cave_no_slopes_37
+  - first:
+      213: 21300076
+    second: Platform_cave_no_slopes_38
+  - first:
+      213: 21300078
+    second: Platform_cave_no_slopes_39
+  - first:
+      213: 21300080
+    second: Platform_cave_no_slopes_40
+  - first:
+      213: 21300082
+    second: Platform_cave_no_slopes_41
+  - first:
+      213: 21300084
+    second: Platform_cave_no_slopes_42
+  - first:
+      213: 21300086
+    second: Platform_cave_no_slopes_43
+  - first:
+      213: 21300088
+    second: Platform_cave_no_slopes_44
+  - first:
+      213: 21300090
+    second: Platform_cave_no_slopes_45
+  - first:
+      213: 21300092
+    second: Platform_cave_no_slopes_46
+  - first:
+      213: 21300094
+    second: Platform_cave_no_slopes_47
+  - first:
+      213: 21300096
+    second: Platform_cave_no_slopes_48
   externalObjects: {}
-  serializedVersion: 13
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -66,11 +210,11 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   swizzle: 50462976
-  cookieLightType: 0
+  cookieLightType: 1
   platformSettings:
-  - serializedVersion: 4
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -82,170 +226,38 @@ TextureImporter:
     overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: plains_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8e2b58f38aeeb59a0800000000000000
-      internalID: -6243134052031417624
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: plains_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ca6e8f0ab0ab19b40bda66aa8256e816
-      internalID: -854322281
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: plains_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3011c63f0db47754eb530d237947280f
-      internalID: 1373274534
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: plains_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 23f3c71208caf964197282617cffd103
-      internalID: -1672681808
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: plains_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d3b5e669bc3972d47aeaeee4deefe7dc
-      internalID: 685090628
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: plains_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00aca361293fa3f4aa00cb6e198fcb01
-      internalID: -11762607
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: plains_6
+      name: Platform_cave_no_slopes_0
       rect:
         serializedVersion: 2
         x: 0
@@ -253,21 +265,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a50db195a9010304ab7a922ded91873b
-      internalID: -1195980684
+      spriteID: 7cdc704561b6f1742b73f0cc7d031514
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_7
+      name: Platform_cave_no_slopes_1
       rect:
         serializedVersion: 2
         x: 16
@@ -275,21 +286,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69dcc11b55affd147994c0ac69ed976a
-      internalID: 1328117486
+      spriteID: 526746acd8720314c931940bc443bccf
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_8
+      name: Platform_cave_no_slopes_2
       rect:
         serializedVersion: 2
         x: 32
@@ -297,21 +307,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcaaa69fc78a17f4da15201fbcbae6e6
-      internalID: -1352154809
+      spriteID: adffabcf3b6b68043b4969b4e8c5ebe6
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_9
+      name: Platform_cave_no_slopes_3
       rect:
         serializedVersion: 2
         x: 48
@@ -319,21 +328,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fc3d08a9f3253f41a098e0801963339
-      internalID: 702000104
+      spriteID: f023814ce078caf4f950c994ec07b143
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_10
+      name: Platform_cave_no_slopes_4
       rect:
         serializedVersion: 2
         x: 64
@@ -341,21 +349,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5068b04e1a01234da9f587a0b7f8e5e
-      internalID: -2114525109
+      spriteID: 0e36071f848ce0c4a81d34acbdbc61b3
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_11
+      name: Platform_cave_no_slopes_5
       rect:
         serializedVersion: 2
         x: 80
@@ -363,21 +370,41 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9eb44b6be5059154bb8daf1ef2f84ca8
-      internalID: -1606472949
+      spriteID: 36711538368e306479b42d223f06a33b
+      internalID: 21300010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_12
+      name: Platform_cave_no_slopes_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d704dc388f023343b5ecc59a75513ac
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform_cave_no_slopes_7
       rect:
         serializedVersion: 2
         x: 0
@@ -385,21 +412,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 565b78608dd75ae44ae8f8f630fd548d
-      internalID: -1065402994
+      spriteID: e01885b9e4c071b4f9721502f664f365
+      internalID: 21300014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_13
+      name: Platform_cave_no_slopes_8
       rect:
         serializedVersion: 2
         x: 16
@@ -407,21 +433,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d132b102d9217f4888015927602b572
-      internalID: 1121992389
+      spriteID: 1fe75c26761e1d24786b2cc64b7d2ef2
+      internalID: 21300016
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_14
+      name: Platform_cave_no_slopes_9
       rect:
         serializedVersion: 2
         x: 32
@@ -429,21 +454,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33e5915528730054b820466337d1af3d
-      internalID: -611604319
+      spriteID: c11044e101d52b045998b61a86040e49
+      internalID: 21300018
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_15
+      name: Platform_cave_no_slopes_10
       rect:
         serializedVersion: 2
         x: 48
@@ -451,21 +475,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37991aa154a19014e9e7bf9c78c52bfe
-      internalID: 1618581859
+      spriteID: e720b252257721d4f9c96d8d2951b5bf
+      internalID: 21300020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_16
+      name: Platform_cave_no_slopes_11
       rect:
         serializedVersion: 2
         x: 64
@@ -473,21 +496,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4eb7519cada6be47a2cddc0761cdb39
-      internalID: 547045651
+      spriteID: 7feba66c38973df43975d21f995050cd
+      internalID: 21300022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_17
+      name: Platform_cave_no_slopes_12
       rect:
         serializedVersion: 2
         x: 80
@@ -495,21 +517,41 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1328f6684170c944087bb9a95c766fc9
-      internalID: -168695404
+      spriteID: 1607bfdc659dae64888369ec68b467b3
+      internalID: 21300024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_18
+      name: Platform_cave_no_slopes_13
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f28c2dfe05036fe46b76e0828afe094c
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform_cave_no_slopes_14
       rect:
         serializedVersion: 2
         x: 0
@@ -517,21 +559,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 381e5716e54d20549a020a76042559fa
-      internalID: 904064988
+      spriteID: 38378759d4da41a4b90301c09ff701d9
+      internalID: 21300028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_19
+      name: Platform_cave_no_slopes_15
       rect:
         serializedVersion: 2
         x: 16
@@ -539,21 +580,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d8d303bda0b4c448ac444e5d83c49d4
-      internalID: -1834359078
+      spriteID: 9c0e3d4ca7df4de4e800e92088ac8942
+      internalID: 21300030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_20
+      name: Platform_cave_no_slopes_16
       rect:
         serializedVersion: 2
         x: 32
@@ -561,21 +601,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11e07a48e58435a4993f91d5609134b7
-      internalID: 1544223264
+      spriteID: b9aa167b8281a49468bea619278f925c
+      internalID: 21300032
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_21
+      name: Platform_cave_no_slopes_17
       rect:
         serializedVersion: 2
         x: 48
@@ -583,21 +622,83 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cacceaf0791b676418a8fb608d98aaa3
-      internalID: 1114852238
+      spriteID: abc946d1779e0b84b81df97dadb11af3
+      internalID: 21300034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_22
+      name: Platform_cave_no_slopes_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d7aa878c172bb345bd03b581338a002
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform_cave_no_slopes_19
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba6c8981ccc675548b4820424ac3df62
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform_cave_no_slopes_20
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f07c8612464ecd34296c10b38983e857
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform_cave_no_slopes_21
       rect:
         serializedVersion: 2
         x: 0
@@ -605,21 +706,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2f431b882bbceb4799b28b26810b218
-      internalID: -1024553871
+      spriteID: ed7540bff3d668a42a06c9c20b063642
+      internalID: 21300042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TopCLeft
+      name: Platform_cave_no_slopes_22
       rect:
         serializedVersion: 2
         x: 16
@@ -627,21 +727,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82b94f46fce92644f9e50cacc089ed86
-      internalID: -1515462856
+      spriteID: d4ec31ac59e56fc48be7ee9dcbe43f93
+      internalID: 21300044
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TopMiddle
+      name: Platform_cave_no_slopes_23
       rect:
         serializedVersion: 2
         x: 32
@@ -649,21 +748,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5a7ad0bf6ddafc498c9c6ceaf9c58ad
-      internalID: 1052752364
+      spriteID: c20b189b24ae2954c9ac0564e21d26dc
+      internalID: 21300046
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TopCRight
+      name: Platform_cave_no_slopes_24
       rect:
         serializedVersion: 2
         x: 48
@@ -671,21 +769,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b81fbf32111718478d38996d1e00490
-      internalID: -43998930
+      spriteID: 47ac97066e017db4db3bc7aa0b8a417d
+      internalID: 21300048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_26
+      name: Platform_cave_no_slopes_25
       rect:
         serializedVersion: 2
         x: 64
@@ -693,21 +790,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30950008d5f3fb54496828b37f0aff93
-      internalID: -157846247
+      spriteID: 4d9e4b6bc028e61489bbe204e2c8f8a2
+      internalID: 21300050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_27
+      name: Platform_cave_no_slopes_26
       rect:
         serializedVersion: 2
         x: 80
@@ -715,21 +811,41 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79f8208e2fba1444dae79d9089a50414
-      internalID: 1549386896
+      spriteID: 311db96d8c7f8524ca3092240b683190
+      internalID: 21300052
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_28
+      name: Platform_cave_no_slopes_27
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfe9c110eb49d1a48b5eda2f48a0132d
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform_cave_no_slopes_28
       rect:
         serializedVersion: 2
         x: 0
@@ -737,21 +853,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9dd4e1fcba190a4c9ebf2c21e70df62
-      internalID: -1216686062
+      spriteID: 9888078de9b4d0b4cbad69293a3b5148
+      internalID: 21300056
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LeftMiddle
+      name: Platform_cave_no_slopes_29
       rect:
         serializedVersion: 2
         x: 16
@@ -759,21 +874,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4774e17423755d645bfd2b3fe9675532
-      internalID: -1715118479
+      spriteID: e83e104c5c511c24fade681efc445a2f
+      internalID: 21300058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Center
+      name: Platform_cave_no_slopes_30
       rect:
         serializedVersion: 2
         x: 32
@@ -781,21 +895,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 385bda17459e66b49960a6aae6ed8608
-      internalID: 1443307032
+      spriteID: 62251f693dd43ee4bbab42859e5a381c
+      internalID: 21300060
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RightMiddle
+      name: Platform_cave_no_slopes_31
       rect:
         serializedVersion: 2
         x: 48
@@ -803,21 +916,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cc0046b8ca60914184f54356c43078e
-      internalID: -1101053141
+      spriteID: 65f6779cf579ebf4cab06f2cf693bd29
+      internalID: 21300062
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_32
+      name: Platform_cave_no_slopes_32
       rect:
         serializedVersion: 2
         x: 64
@@ -825,21 +937,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 841082a3d1ebdcc49ba0c0a56bba4c65
-      internalID: 593596382
+      spriteID: c9a29d00fd3b4f04f88b5cc6917f7cbd
+      internalID: 21300064
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_33
+      name: Platform_cave_no_slopes_33
       rect:
         serializedVersion: 2
         x: 80
@@ -847,21 +958,41 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c84c1d5800d68c342a1d024a8e5bde21
-      internalID: -1722243938
+      spriteID: a3e5b3e196fe7cb408bb51978b41b031
+      internalID: 21300066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_34
+      name: Platform_cave_no_slopes_34
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fe4cd8712541894e80ee0ca6d3f6a3b
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform_cave_no_slopes_35
       rect:
         serializedVersion: 2
         x: 0
@@ -869,21 +1000,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39c60608f298124458ee670ff89fd469
-      internalID: -226729386
+      spriteID: e0489fb5c44824840a6384eeea5c1fc7
+      internalID: 21300070
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BottomCLeft
+      name: Platform_cave_no_slopes_36
       rect:
         serializedVersion: 2
         x: 16
@@ -891,21 +1021,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2009c1f37feb70b4da20680c769da981
-      internalID: -1587597133
+      spriteID: 1ca019ecff0dfbf4ea8a0d08ce300b0a
+      internalID: 21300072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BottomMiddle
+      name: Platform_cave_no_slopes_37
       rect:
         serializedVersion: 2
         x: 32
@@ -913,21 +1042,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0fa0957bdd6f16419eec2a431aad97d
-      internalID: -725444969
+      spriteID: 1b587cc1a8529534cb933b8a6e7f889d
+      internalID: 21300074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BottomCRight
+      name: Platform_cave_no_slopes_38
       rect:
         serializedVersion: 2
         x: 48
@@ -935,21 +1063,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad413a65caef3e94d8f8ef339072fae7
-      internalID: -480163674
+      spriteID: 576116f10ba33d14d8706925348d0f83
+      internalID: 21300076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_38
+      name: Platform_cave_no_slopes_39
       rect:
         serializedVersion: 2
         x: 64
@@ -957,21 +1084,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9fac556f4039fc43aead66ad6c691a5
-      internalID: -907215442
+      spriteID: cce2ecae6f135454789ddc0c4ee696c6
+      internalID: 21300078
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_39
+      name: Platform_cave_no_slopes_40
       rect:
         serializedVersion: 2
         x: 80
@@ -979,21 +1105,41 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0779b579485fc4045a5a35e99989e9eb
-      internalID: 1756960020
+      spriteID: 46123bf5ab5584a408bb162dc035e3a9
+      internalID: 21300080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_40
+      name: Platform_cave_no_slopes_41
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbcc4ddc49515fc42995c60d88269a15
+      internalID: 21300082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform_cave_no_slopes_42
       rect:
         serializedVersion: 2
         x: 0
@@ -1001,21 +1147,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cada688fb9e4fa549b2081df8109fc33
-      internalID: -1115363390
+      spriteID: 362c494b4deb75749926ce7150f816bd
+      internalID: 21300084
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_41
+      name: Platform_cave_no_slopes_43
       rect:
         serializedVersion: 2
         x: 16
@@ -1023,21 +1168,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93f7fac7050847344b55fe8c51e298c3
-      internalID: 1402313812
+      spriteID: bc04a83dcfd30834087f30404ba41084
+      internalID: 21300086
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_42
+      name: Platform_cave_no_slopes_44
       rect:
         serializedVersion: 2
         x: 32
@@ -1045,21 +1189,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5778fca0a4c1ab4b82b9f8d8a666b13
-      internalID: -990990864
+      spriteID: 2f60579deefc8f649ab5b4beaa58a348
+      internalID: 21300088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: plains_43
+      name: Platform_cave_no_slopes_45
       rect:
         serializedVersion: 2
         x: 48
@@ -1067,79 +1210,141 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84fc7bff7722bfd4fa494c0a1f4d7309
-      internalID: -1085092419
+      spriteID: 1d366e8fb7448d940a7229a7001e5039
+      internalID: 21300090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform_cave_no_slopes_46
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b27c37167c300504fabfd749f39999cf
+      internalID: 21300092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform_cave_no_slopes_47
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d14a548efdb18b6419b6aef286592d69
+      internalID: 21300094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platform_cave_no_slopes_48
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 530b539de4e93c44cb14453229ceabd5
+      internalID: 21300096
       vertices: []
       indices: 
       edges: []
       weights: []
     outline: []
-    customData: 
     physicsShape: []
     bones: []
-    spriteID: d2fd2f2d7c2c89e47990cf78e539e9e2
+    spriteID: 5c091dbfec20daf41a820d9e8a4755a2
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      BottomCLeft: -1587597133
-      BottomCRight: -480163674
-      BottomMiddle: -725444969
-      Center: 1443307032
-      LeftMiddle: -1715118479
-      RightMiddle: -1101053141
-      TopCLeft: -1515462856
-      TopCRight: -43998930
-      TopMiddle: 1052752364
-      plains_0: -6243134052031417624
-      plains_1: -854322281
-      plains_10: -2114525109
-      plains_11: -1606472949
-      plains_12: -1065402994
-      plains_13: 1121992389
-      plains_14: -611604319
-      plains_15: 1618581859
-      plains_16: 547045651
-      plains_17: -168695404
-      plains_18: 904064988
-      plains_19: -1834359078
-      plains_2: 1373274534
-      plains_20: 1544223264
-      plains_21: 1114852238
-      plains_22: -1024553871
-      plains_26: -157846247
-      plains_27: 1549386896
-      plains_28: -1216686062
-      plains_3: -1672681808
-      plains_32: 593596382
-      plains_33: -1722243938
-      plains_34: -226729386
-      plains_38: -907215442
-      plains_39: 1756960020
-      plains_4: 685090628
-      plains_40: -1115363390
-      plains_41: 1402313812
-      plains_42: -990990864
-      plains_43: -1085092419
-      plains_5: -11762607
-      plains_6: -1195980684
-      plains_7: 1328117486
-      plains_8: -1352154809
-      plains_9: 702000104
+      Platform_cave_no_slopes_0: 21300000
+      Platform_cave_no_slopes_1: 21300002
+      Platform_cave_no_slopes_10: 21300020
+      Platform_cave_no_slopes_11: 21300022
+      Platform_cave_no_slopes_12: 21300024
+      Platform_cave_no_slopes_13: 21300026
+      Platform_cave_no_slopes_14: 21300028
+      Platform_cave_no_slopes_15: 21300030
+      Platform_cave_no_slopes_16: 21300032
+      Platform_cave_no_slopes_17: 21300034
+      Platform_cave_no_slopes_18: 21300036
+      Platform_cave_no_slopes_19: 21300038
+      Platform_cave_no_slopes_2: 21300004
+      Platform_cave_no_slopes_20: 21300040
+      Platform_cave_no_slopes_21: 21300042
+      Platform_cave_no_slopes_22: 21300044
+      Platform_cave_no_slopes_23: 21300046
+      Platform_cave_no_slopes_24: 21300048
+      Platform_cave_no_slopes_25: 21300050
+      Platform_cave_no_slopes_26: 21300052
+      Platform_cave_no_slopes_27: 21300054
+      Platform_cave_no_slopes_28: 21300056
+      Platform_cave_no_slopes_29: 21300058
+      Platform_cave_no_slopes_3: 21300006
+      Platform_cave_no_slopes_30: 21300060
+      Platform_cave_no_slopes_31: 21300062
+      Platform_cave_no_slopes_32: 21300064
+      Platform_cave_no_slopes_33: 21300066
+      Platform_cave_no_slopes_34: 21300068
+      Platform_cave_no_slopes_35: 21300070
+      Platform_cave_no_slopes_36: 21300072
+      Platform_cave_no_slopes_37: 21300074
+      Platform_cave_no_slopes_38: 21300076
+      Platform_cave_no_slopes_39: 21300078
+      Platform_cave_no_slopes_4: 21300008
+      Platform_cave_no_slopes_40: 21300080
+      Platform_cave_no_slopes_41: 21300082
+      Platform_cave_no_slopes_42: 21300084
+      Platform_cave_no_slopes_43: 21300086
+      Platform_cave_no_slopes_44: 21300088
+      Platform_cave_no_slopes_45: 21300090
+      Platform_cave_no_slopes_46: 21300092
+      Platform_cave_no_slopes_47: 21300094
+      Platform_cave_no_slopes_48: 21300096
+      Platform_cave_no_slopes_5: 21300010
+      Platform_cave_no_slopes_6: 21300012
+      Platform_cave_no_slopes_7: 21300014
+      Platform_cave_no_slopes_8: 21300016
+      Platform_cave_no_slopes_9: 21300018
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
